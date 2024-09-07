@@ -1,0 +1,202 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    height: 100%; /* Ensure the background covers the full height */
+    position: relative;
+}
+
+html::before {
+    content: "";
+    position: fixed; /* Use fixed positioning to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('pngegg (1).png'); /* Replace with your image path */
+    background-size: 100px 100px; /* Adjust the size of the PNG */
+    background-repeat: repeat; /* Repeat the image across the page */
+    opacity: 0.5; /* Adjust the transparency level */
+    z-index: -1; /* Ensure the background is behind all content */
+    animation: moveBackground 10s linear infinite; /* Apply animation */
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 100px; /* Adjust to control the animation direction and speed */
+    }
+}
+
+.navbar {
+    background-color: rgba(0, 86, 179, 0.8); /* Darker color with some transparency */
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar-brand, .nav-item.nav-link {
+    color: #fff !important;
+}
+
+.nav-item.nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item.nav-link:hover {
+    color: #99bcf7 !important;
+    transform: scale(1.1);
+}
+.navbar {
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 70px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a white background with some transparency */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.profile-pic {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+
+.greeting {
+    font-size: 2.5em;
+    color: #007bff;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+
+.specialties {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.specialty {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.specialty:hover {
+    transform: scale(1.1);
+    background-color: #e9ecef;
+    border-radius: 0px;
+}
+
+#competences i {
+    margin: 20px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#competences i:hover {
+    transform: scale(1.2);
+    color: #007bff; /* Change color on hover */
+}
+
+
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #555;
+}
+
+.blue-icon {
+    color: #007bff; /* Blue color */
+    margin-right: 10px;
+}
+
+
+
+.tech-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+
+.specialisation-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.card {
+    position: relative;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.5);
+}
+.code-style-title {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: inline-block;
+}
+
+.code-style-title::before,
+.code-style-title::after {
+    content: '';
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+}
+
+.code-style-title::before {
+    left: -35px;
+}
+
+.code-style-title::after {
+    right: -35px;
+}
